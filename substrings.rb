@@ -19,3 +19,11 @@ end
 
 puts substrings("below", dictionary)
 p substrings("Howdy partner, sit down! How's it going?", dictionary)
+input_string = gets.chomp
+input_dictionary = []
+input = nil
+until input == "/end"
+  input = gets.chomp
+  input_dictionary.push(input)
+end
+p substrings(input_string, input_dictionary)

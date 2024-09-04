@@ -18,4 +18,4 @@ def is_sorted?(array)
   true
 end
 
-p bubble_sort([4,3,78,2,0,2,-4,50,-3,4.6,82,-92,-7.4,1,9])
+p bubble_sort(gets.chomp.split(",").map(&:to_i))
