@@ -1,11 +1,20 @@
-require 'pry-byebug'
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 def substrings(string, list)
-  #binding.pry
-  list.select do |word|
-    string.include?(word)
+  substrings = {}
+  string_words = string.downcase.split(" ")
+  string_words.each do |word|
+    list.each do |substring|
+      if word.include?(substring)
+        if substrings[substring] == nil
+          substrings[substring] = 1 
+        else
+          substrings[substring] += 1
+        end
+      end
+    end
   end
+  return substrings 
 end
 
 puts substrings("below", dictionary)
